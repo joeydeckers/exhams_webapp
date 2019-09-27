@@ -1,0 +1,14 @@
+{
+    "version": 3,
+    "mappings": "AGAA,AACI,cADU,CACV,aAAa,CAAA;EACT,UAAU,EAAE,OAAO;EACnB,aAAa,EAAE,IAAI;EACnB,OAAO,EAAE,IAAI;CAChB;;AALL,AAMI,cANU,CAMV,SAAS,CAAA;EACL,KAAK,EAAE,IAAI;CACd",
+    "sources": [
+        "main.scss",
+        "base/_base.scss",
+        "components/_components.scss",
+        "components/_navbarLanding.scss",
+        "layout/_layout.scss",
+        "pages/_pages.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}
