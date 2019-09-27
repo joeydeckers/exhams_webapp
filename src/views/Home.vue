@@ -4,7 +4,7 @@
     <section class="intro">
       <b-container fluid>
         <b-row>
-          <b-col>
+          <b-col style="padding:0">
             <div class="intro-text">
              <h2>Het <strong>online</strong> tentamentraining platform waardoor <strong>jij</strong> je tentamen haalt</h2>
              <p>Zoek hier je tentamentraining die past bij jouw opleiding en universiteit.</p>
@@ -28,9 +28,28 @@
              </div>
            </div>
           </b-col>
-          <b-col>
+          <b-col style="padding:0">
             <div class="landing-bg"></div>
           </b-col>
+        </b-row>
+      </b-container>
+    </section>
+    <section class="recent-videos">
+      <b-container>
+        <h2>Recente tentamentrainingen</h2>
+        <div class="videos">
+          <b-row>
+            <b-col>
+              <div style="background: black;height: 235px;width: 400px;"></div>
+            </b-col>
+          </b-row>
+        </div>
+      </b-container>
+    </section>
+    <section>
+      <b-container>
+        <b-row>
+          hallo
         </b-row>
       </b-container>
     </section>
@@ -40,9 +59,12 @@
 
 <script>
   import NavbarLanding from './../components/NavbarLanding'
+  import Video from './../components/Video'
+
   export default {
     components:{
-      NavbarLanding
+      NavbarLanding,
+      Video
     }
   }
 </script>

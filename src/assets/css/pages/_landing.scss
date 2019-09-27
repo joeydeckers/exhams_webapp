@@ -4,7 +4,7 @@
         background: #fff;
         .intro-text{
             position: relative;
-            top: 200px;
+            top: 30%;
             max-width: 665px;
             margin: 0 auto;
             h2{
@@ -57,6 +57,17 @@
             padding-right: 25px;
             padding-left: 25px;
             box-shadow: 10px 10px 18px 3px rgba(0,0,0,0.14);
+        }
+    }
+    .recent-videos{
+        padding-top: 50px;
+        padding-bottom: 80px;
+        background: #fbfbfb;
+        h2{
+            text-align: center;
+        }
+        .videos{
+            margin-top: 50px;
         }
     }
 }
