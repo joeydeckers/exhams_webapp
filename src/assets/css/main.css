@@ -239,6 +239,14 @@
   margin-top: 50px;
 }
 
+.login-form {
+  position: relative;
+  top: 90px;
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 body {
   font-family: 'Raleway', sans-serif !important;
 }
