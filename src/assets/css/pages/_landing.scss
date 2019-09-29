@@ -2,22 +2,66 @@
     .intro{
         height: 85vh;
         background: #fff;
+        @media screen and (max-width:425px){
+            height: 50vh;
+        }
+        // @media screen and (max-width: 375px){
+        //     height: 75vh;
+        // }
         .intro-text{
             position: relative;
             top: 30%;
             max-width: 665px;
             margin: 0 auto;
+            padding: 10px;
+            @media screen and (max-width:1440px){
+                max-width: 650px;
+            }
+            @media screen and (max-width: 1024px){
+                max-width: 490px;
+            }
+            @media screen and (max-width:768px){
+                top: 70%;
+            }
+            @media screen and (max-width:425px){
+                padding: 0 20px 0 20px;
+                margin-top: 10px;
+                top: 30%;
+            }
+
             h2{
-                font-size: 50px;
+                font-size: 48px;
                 color:#101323;
                 line-height: 65px;
+                @media screen and (max-width: 1440px){
+                    font-size: 45px;
+                }
+                @media screen and (max-width: 1024px){
+                    font-size: 35px;
+                    line-height: 46px;
+                }
+                @media screen and (max-width:425px){
+                    font-size: 28px;
+                }
+                @media screen and (max-width: 375px){
+                    font-size: 25px;
+                    line-height: 40px;
+                }
+                @media screen and (max-width:320px){
+                    font-size: 21px;
+                    line-height: 33px;
+                }
             }
+     
         }
         .landing-bg{
             height: 85vh;
             background-position: center;
             background-size: cover;
             background-image: url('../images/intro_landing.jpg');
+            @media screen and (max-width: 850px){
+                display: none !important;
+            }
         }
         .search{
             overflow: auto;
@@ -25,14 +69,32 @@
             background: #fff;
             box-shadow: 10px 10px 18px 3px rgba(0,0,0,0.14);
             border-radius: 50px;
+            @media screen and (max-width:320px){
+                padding: 20px;
+            }
             .select{
                 display: inline-block;
                 margin-right: 50px;
                 margin-top: 7px;
+                @media screen and (max-width: 1024px){
+                    margin-right: 10px;
+                }   
             }
             select{
                 border:transparent;
-                width: 170px;                
+                width: 170px;
+                @media screen and (max-width: 1024px){
+                    width: 145px;
+                }
+                @media screen and (max-width: 425px){
+                    width: 100px;
+                }
+                @media screen and (max-width: 375px){
+                    width: 80px;
+                }  
+                @media screen and (max-width: 320px){
+                    width: 80px;
+                }  
                 &:focus{
                     outline: 0 !important;
                 }
@@ -57,6 +119,10 @@
             padding-right: 25px;
             padding-left: 25px;
             box-shadow: 10px 10px 18px 3px rgba(0,0,0,0.14);
+            @media screen and (max-width: 320px){
+                width: 100%;
+                margin-top: 10px;
+            }
         }
     }
     .recent-videos{

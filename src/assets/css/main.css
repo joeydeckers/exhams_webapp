@@ -17,7 +17,25 @@
 }
 
 .container {
-  max-width: 1600px;
+  max-width: 1600px !important;
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
 }
 
 .landing .intro {
@@ -25,17 +43,83 @@
   background: #fff;
 }
 
+@media screen and (max-width: 425px) {
+  .landing .intro {
+    height: 50vh;
+  }
+}
+
 .landing .intro .intro-text {
   position: relative;
   top: 30%;
   max-width: 665px;
   margin: 0 auto;
+  padding: 10px;
+}
+
+@media screen and (max-width: 1440px) {
+  .landing .intro .intro-text {
+    max-width: 650px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .landing .intro .intro-text {
+    max-width: 490px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .landing .intro .intro-text {
+    top: 70%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .landing .intro .intro-text {
+    padding: 0 20px 0 20px;
+    margin-top: 10px;
+    top: 30%;
+  }
 }
 
 .landing .intro .intro-text h2 {
-  font-size: 50px;
+  font-size: 48px;
   color: #101323;
   line-height: 65px;
+}
+
+@media screen and (max-width: 1440px) {
+  .landing .intro .intro-text h2 {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .landing .intro .intro-text h2 {
+    font-size: 35px;
+    line-height: 46px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .landing .intro .intro-text h2 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .landing .intro .intro-text h2 {
+    font-size: 25px;
+    line-height: 40px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .landing .intro .intro-text h2 {
+    font-size: 21px;
+    line-height: 33px;
+  }
 }
 
 .landing .intro .landing-bg {
@@ -43,6 +127,12 @@
   background-position: center;
   background-size: cover;
   background-image: url("../images/intro_landing.jpg");
+}
+
+@media screen and (max-width: 850px) {
+  .landing .intro .landing-bg {
+    display: none !important;
+  }
 }
 
 .landing .intro .search {
@@ -54,15 +144,51 @@
   border-radius: 50px;
 }
 
+@media screen and (max-width: 320px) {
+  .landing .intro .search {
+    padding: 20px;
+  }
+}
+
 .landing .intro .search .select {
   display: inline-block;
   margin-right: 50px;
   margin-top: 7px;
 }
 
+@media screen and (max-width: 1024px) {
+  .landing .intro .search .select {
+    margin-right: 10px;
+  }
+}
+
 .landing .intro .search select {
   border: transparent;
   width: 170px;
+}
+
+@media screen and (max-width: 1024px) {
+  .landing .intro .search select {
+    width: 145px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .landing .intro .search select {
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .landing .intro .search select {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .landing .intro .search select {
+    width: 80px;
+  }
 }
 
 .landing .intro .search select:focus {
@@ -90,6 +216,13 @@
   padding-left: 25px;
   -webkit-box-shadow: 10px 10px 18px 3px rgba(0, 0, 0, 0.14);
           box-shadow: 10px 10px 18px 3px rgba(0, 0, 0, 0.14);
+}
+
+@media screen and (max-width: 320px) {
+  .landing .intro .btn-custom {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 .landing .recent-videos {

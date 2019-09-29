@@ -4,7 +4,7 @@
     <section class="intro">
       <b-container fluid>
         <b-row>
-          <b-col style="padding:0">
+          <b-col lg="6" md="12" sm="12" style="padding:0">
             <div class="intro-text">
              <h2>Het <strong>online</strong> tentamentraining platform waardoor <strong>jij</strong> je tentamen haalt</h2>
              <p>Zoek hier je tentamentraining die past bij jouw opleiding en universiteit.</p>
@@ -28,7 +28,7 @@
              </div>
            </div>
           </b-col>
-          <b-col style="padding:0">
+          <b-col lg="6" md="6" style="padding:0">
             <div class="landing-bg"></div>
           </b-col>
         </b-row>
@@ -39,8 +39,17 @@
         <h2>Recente tentamentrainingen</h2>
         <div class="videos">
           <b-row>
-            <b-col>
-              <div style="background: black;height: 235px;width: 400px;"></div>
+            <b-col lg = '3' sm="12">
+              <div style="background: black;height: 235px;width: 100%; margin-bottom:10;"></div>
+            </b-col>
+            <b-col lg = '3' sm="12">
+              <div style="background: black;height: 235px;width: 100%; margin-bottom:10;"></div>
+            </b-col>
+            <b-col lg = '3' sm="12">
+              <div style="background: black;height: 235px;width: 100%; margin-bottom:10;"></div>
+            </b-col>
+            <b-col lg = '3' sm="12">
+              <div style="background: black;height: 235px;width: 100%; margin-bottom:10;"></div>
             </b-col>
           </b-row>
         </div>
@@ -49,7 +58,7 @@
     <section>
       <b-container>
         <b-row>
-          hallo
+         
         </b-row>
       </b-container>
     </section>
