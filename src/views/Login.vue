@@ -2,9 +2,10 @@
     <div>
         <b-container>
             <div class="login-form">
-                <input class="form-control" type="text">
-                <input class="form-control" type="password">
-                <button class="btn ">Inloggen</button>
+                <h4>Vul hier je gegevens in om in te loggen.</h4>
+                <input class="form-control" placeholder="Email" type="text">
+                <input class="form-control" placeholder="Wachtwoord" type="password">
+                <button @click="login" class="btn ">Inloggen</button>
             </div>
         </b-container>
         
@@ -12,11 +13,17 @@
 </template>
 
 <script>
-export default {
+import axios from 'axios'
+import { mapActions } from "vuex";
 
+export default {
+    methods:{
+        ...mapActions(["userLogin"]),
+        login(){
+            //this.userLogin({email:'deckersjoey@gmail.com', password: 'test123'})
+            this.$store.dispatch('userLogin', {email:'deckersjoey@gmail.com', password: 'test123'})
+
+        }
+    }
 }
 </script>
-
-<style>
-
-</style>
