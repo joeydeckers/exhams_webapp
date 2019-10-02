@@ -1,6 +1,6 @@
 <template>
   <div id ="navbarLanding">
-    <b-navbar class="fixed-top " :style = "{backgroundColor: navbarBackgroundColor}" toggleable="lg" type="light" variant="info">
+    <b-navbar  :style = "{backgroundColor: navbarBackgroundColor}" toggleable="lg" type="light" variant="info">
       <b-navbar-brand href="#">Exhams</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
       <b-collapse id="nav-collapse" is-nav>
@@ -20,6 +20,7 @@
 
 <script>
   export default {
-      props: ['navbarBackgroundColor']
+      props: ['navbarBackgroundColor'],
   }
 </script>
+

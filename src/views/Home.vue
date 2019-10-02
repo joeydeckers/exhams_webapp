@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <NavbarLanding navbarBackgroundColor = "transparent !important"/>
+    <NavbarLanding class="fixed-top" navbarBackgroundColor = "transparent !important"/>
     <section class="intro">
       <b-container fluid>
         <b-row>
