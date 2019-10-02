@@ -3,11 +3,11 @@
         <div class="header">
             <NavbarLanding navbarBackgroundColor = "transparent !important"/>
         </div>
-        <b-container>
+        <b-container class="container-custom">
             <b-row> 
                 <b-col lg="4">
                     <h2><strong>Heb je vragen? Neem gerust <br>contact op!</strong></h2>
-                    <p>Wij nemen contact met onze gebruikers erg serieus. Mocht je vragen of suggesties hebben over ons platform aarzel niet! Wij zullen zo snel mogelijk op je reageren.</p>
+                    <p class="info-text">Wij nemen contact met onze gebruikers erg serieus. Mocht je vragen of suggesties hebben over ons platform aarzel niet! Wij zullen zo snel mogelijk op je reageren.</p>
                     <div>
                         <p>Email: info@exhams.com</p>
                         <p>Tel: 112</p>

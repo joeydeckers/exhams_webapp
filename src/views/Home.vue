@@ -35,7 +35,7 @@
       </b-container>
     </section>
     <section class="recent-videos">
-      <b-container>
+      <b-container class="container-custom">
         <h2>Recente tentamentrainingen</h2>
         <div class="videos">
           <b-row>
