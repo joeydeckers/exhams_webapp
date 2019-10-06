@@ -3,9 +3,13 @@
         <b-container class="container-custom">
             <div class="login-form">
                 <h4>Vul hier je gegevens in om in te loggen.</h4>
-                <input class="form-control" placeholder="Email" type="text">
-                <input class="form-control" placeholder="Wachtwoord" type="password">
-                <button @click="login" class="btn ">Inloggen</button>
+                <form>
+                    <p class="error" v-if="getError">Je gegevens zijn niet correct</p>
+                    <input v-model="email" class="form-control" placeholder="Email" type="text">
+                    <input v-model="password" class="form-control" placeholder="Wachtwoord" type="password">
+                    <button @click="login" class="btn ">Inloggen</button>
+                </form>
+
             </div>
         </b-container>
         
@@ -16,13 +20,24 @@
 import axios from 'axios'
 import { mapActions } from "vuex";
 
+
 export default {
+    data(){
+        return{
+            email: '',
+            password: '',
+            error: this.$store.getters.getError
+        }
+    },
     methods:{
         ...mapActions(["userLogin"]),
         login(){
-            //this.userLogin({email:'deckersjoey@gmail.com', password: 'test123'})
-            this.$store.dispatch('userLogin', {email:'deckersjoey@gmail.com', password: 'test123'})
-
+            this.userLogin({email:this.email, password: this.password});
+        },
+    },
+    computed:{
+        getError(){
+            return this.$store.getters.getError;
         }
     }
 }

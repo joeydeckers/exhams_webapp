@@ -74,6 +74,9 @@
     components:{
       NavbarLanding,
       Video
+    },
+    mounted(){
+      console.log(this.$store.getters.getUserToken);
     }
   }
 </script>

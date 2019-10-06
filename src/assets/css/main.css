@@ -296,6 +296,10 @@
   padding-left: 25px;
 }
 
+.login-form .error {
+  color: red;
+}
+
 #contact .container {
   margin-top: 80px;
 }

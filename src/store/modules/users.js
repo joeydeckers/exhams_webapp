@@ -1,38 +1,40 @@
 import axios from 'axios'
+import router from './../../router'
 
 const state = {
-    recipes: [],
-    userToken: ''
+    userToken: localStorage.getItem('accessToken') || '',
+    error: false
 };
 
 const getters = {
-    getAllRecipes:(state) =>{
-        return state.recipes;
+    getUserToken:(state) =>{
+        return state.userToken;
     },
-    getSpecificRecipe(state){
-        return projectName => state.items.filter(item => {
-            return item.name === projectName;
-        })
+    getError:(state) =>{
+        return state.error;
     }
 };
 
 const actions = {
-    // getRecipes ({commit}){
-    //     axios
-    //         .post("http://127.0.0.1:8000/api/login", {headers: { 'content-type': 'application/json' }})
-    //         .then(r => r.data)
-    //         .then(recipes => {
-    //             commit('SET_RECIPES', recipes)
-    //         })
-    // },
-    async userLogin: ({commit}, payLoad) => {
-        return axios.post('/login', payLoad).then((response) => {
-          commit('SET_USER', response.data.userToken)
-        }, (err) => {
-          console.log(err)
-        })
-      },
-};
+    userLogin ({commit}, user){
+        axios
+            .post("http://127.0.0.1:8000/api/login",{
+                email: user.email,
+                password: user.password
+            })
+            .then(r => r.data.access_token)
+            .catch((error) => {
+                //console.log(error.response.data.message);
+                commit('SET_ERROR', true);
+            })
+            .then(token => {
+                commit('SET_USER', token);
+                localStorage.setItem('accessToken', token);
+                console.log(localStorage);
+                router.push('course/1');
+            })
+    },
+ };
 
 const mutations = {
     SET_RECIPES(state, recipes){
@@ -40,6 +42,9 @@ const mutations = {
     },
     SET_USER(state, token){
         state.userToken = token;
+    },
+    SET_ERROR(state, setError){
+        state.error = setError;
     }
 };
 
