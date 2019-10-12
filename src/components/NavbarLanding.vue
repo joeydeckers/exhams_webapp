@@ -7,10 +7,16 @@
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
             <!-- Using 'button-content' slot -->
-            <b-navbar-nav>
+            <b-navbar-nav v-if="!loggedIn">
                 <b-nav-item href="#">Over Exhams</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
                 <b-nav-item to="/login">Login</b-nav-item>
+                <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
+            </b-navbar-nav>
+            <b-navbar-nav v-if="loggedIn">
+                <b-nav-item href="#">Mijn dashboard</b-nav-item>
+                <b-nav-item to="/contact">Contact</b-nav-item>
+                <b-nav-item to="/login">Logout</b-nav-item>
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
             </b-navbar-nav>
         </b-navbar-nav>
@@ -22,6 +28,11 @@
 <script>
   export default {
       props: ['navbarBackgroundColor'],
+      data(){
+        return{
+          loggedIn: this.$store.getters.getUserToken
+        }
+      }
   }
 </script>
 
