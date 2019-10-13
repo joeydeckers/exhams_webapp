@@ -63,6 +63,20 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
 
+#course-card {
+  border-radius: 5px;
+  overflow: auto;
+}
+
+#course-card img {
+  width: 100%;
+}
+
+#course-card .course-card-info {
+  padding: 15px;
+  background: #fff;
+}
+
 .landing .intro {
   height: 85vh;
   background: #fff;
@@ -411,6 +425,11 @@
 
 #course .button-custom {
   margin: 10px 0 20px 0;
+}
+
+#home {
+  background: #F8F8F8;
+  height: 100vh;
 }
 
 body {

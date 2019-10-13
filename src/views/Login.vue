@@ -18,7 +18,8 @@
 
 <script>
 import axios from 'axios'
-import { mapActions } from "vuex";
+import { mapActions } from "vuex";  
+import router from './../router'
 
 export default {
     data(){
@@ -37,6 +38,11 @@ export default {
     computed:{
         getError(){
             return this.$store.getters.getError;
+        }
+    },
+    mounted(){
+        if(this.$store.getters.getUserToken){
+            router.push('/home');
         }
     }
 }
