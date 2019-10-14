@@ -66,15 +66,33 @@
 #course-card {
   border-radius: 5px;
   overflow: auto;
+  margin-right: 15px;
 }
 
 #course-card img {
   width: 100%;
 }
 
+#course-card h3 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
 #course-card .course-card-info {
   padding: 15px;
   background: #fff;
+}
+
+#course-card p {
+  margin-bottom: 10px;
+}
+
+#course-card .course-subinfo p {
+  display: inline-block;
+}
+
+#course-card .course-subinfo .course-price {
+  float: right;
 }
 
 .landing .intro {
@@ -429,7 +447,12 @@
 
 #home {
   background: #F8F8F8;
-  height: 100vh;
+  height: 100%;
+}
+
+#home h2 {
+  margin-top: 20px;
+  font-weight: bold;
 }
 
 body {

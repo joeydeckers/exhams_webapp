@@ -16,7 +16,7 @@
             <b-navbar-nav v-if="loggedIn">
                 <b-nav-item href="#">Mijn dashboard</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
-                <b-nav-item to="/login">Logout</b-nav-item>
+                <b-nav-item @click = "logout" to="/">Logout</b-nav-item>
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
             </b-navbar-nav>
         </b-navbar-nav>
@@ -26,13 +26,24 @@
 </template>
 
 <script>
+  import { mapActions } from "vuex";  
+
   export default {
       props: ['navbarBackgroundColor'],
       data(){
         return{
-          loggedIn: this.$store.getters.getUserToken
+          loggedIn: this.getLoggin()
         }
-      }
+      },
+      methods:{
+        ...mapActions(["userLogout"]),
+        logout(){
+          this.userLogout();
+        },
+        getLoggin(){
+          return this.$store.getters.getUserToken;
+        }
+      },
   }
 </script>
 

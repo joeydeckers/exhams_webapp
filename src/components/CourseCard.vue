@@ -3,9 +3,13 @@
       <img :src="courseThumbnail" alt="" >
       <div class="course-card-info">
         <h3>{{courseName}}</h3>
-        <p>{{courseTeacher}}</p>
+        <p>Docent: {{courseTeacher}}</p>
         <p>{{courseSchool}}</p>
-        <p>{{coursePrice}}</p>
+        <div class="course-subinfo">
+          <p>{{courseStudy}}</p>
+          <p class="course-price">€ {{coursePrice}}</p>
+        </div>
+
       </div>
 
   </div>
@@ -13,7 +17,12 @@
 
 <script>
 export default {
-    props:['courseThumbnail', 'courseName', 'coursePrice', 'courseTeacher', 'courseSchool']
+    props:['courseThumbnail', 'courseName', 'coursePrice', 'courseTeacher', 'courseSchool', 'courseStudy'],
+    data(){
+      return{
+
+      }
+    }
 }
 </script>
 

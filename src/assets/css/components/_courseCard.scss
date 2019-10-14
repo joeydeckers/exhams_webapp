@@ -1,11 +1,27 @@
 #course-card{
     border-radius: 5px;
     overflow: auto;
+    margin-right: 15px;
     img{
         width: 100%;
+    }
+    h3{
+        font-size: 25px;
+        font-weight: bold;
     }
     .course-card-info{
         padding: 15px;
         background:#fff;
+    }
+    p{
+        margin-bottom: 10px;
+    }
+    .course-subinfo{
+        p{
+            display: inline-block;
+        }
+        .course-price{
+            float: right;
+        }
     }
 }

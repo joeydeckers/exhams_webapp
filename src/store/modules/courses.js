@@ -2,8 +2,8 @@ import axios from 'axios'
 import router from './../../router'
 
 const state = {
-    userToken: localStorage.getItem('accessToken') || '',
-    error: false
+    userCourses: [],
+    universityCourses: []
 };
 
 const getters = {
@@ -16,7 +16,7 @@ const getters = {
 };
 
 const actions = {
-    userLogin ({commit}, user){
+    getUserCourses ({commit}, user){
         axios
             .post("http://127.0.0.1:8000/api/login",{
                 email: user.email,
@@ -24,7 +24,7 @@ const actions = {
             })
             .then((response) => {
                 console.log(response.data.access_token)
-                commit('SET_USER', response.data.access_token);
+                commit('SET_USER_COURSES', response.data.access_token);
                 localStorage.setItem('accessToken', response.data.access_token);
                 console.log(localStorage);
                 if(localStorage.accessToken){
@@ -36,22 +36,15 @@ const actions = {
             })
 
     },
-    userLogout({commit}){
-        localStorage.clear();
-        commit('SET_USER', '');
-    }
  };
 
 const mutations = {
     SET_RECIPES(state, recipes){
         state.recipes = recipes;
     },
-    SET_USER(state, token){
+    SET_USER_COURSES(state, token){
         state.userToken = token;
     },
-    SET_ERROR(state, setError){
-        state.error = setError;
-    }
 };
 
 export default {
