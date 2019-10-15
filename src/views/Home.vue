@@ -5,33 +5,39 @@
       navbarBackgroundColor="#fff !important"
     />
     <b-container class="container-custom">
-      <h2>Jouw cursussen</h2>
-      <p>Bekijk jouw cursussen</p>
-        <carousel :per-page="5" :mouse-drag="true">
-          <slide>
-            <CourseCard
-              courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              courseName="Advanced datastructures"
-              coursePrice="100"
-              courseTeacher="Joey Deckers"
-              courseSchool="Tilburg University"
-              courseStudy = "Informatica"
-            />
-          </slide>
-        </carousel>
+      {{getUserInfo }}
+      <section class="my-courses">
+        <h2>Jouw cursussen</h2>
+        <p>Bekijk jouw cursussen</p>
+          <carousel :per-page="5" :mouse-drag="true">
+            <slide>
+              <CourseCard
+                courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                courseName="Advanced datastructures"
+                coursePrice="100"
+                courseTeacher="Joey Deckers"
+                courseSchool="Tilburg University"
+                courseStudy = "Informatica"
+              />
+            </slide>
+          </carousel>
+      </section>
+      <section class="university-courses">
         <h2>Bekijk cursussen van Tilburg University</h2>
-        <b-row>
-          <b-col lg ="3">
-            <CourseCard
-              courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-              courseName="Advanced datastructures"
-              coursePrice="100"
-              courseTeacher="Joey Deckers"
-              courseSchool="Tilburg University"
-              courseStudy = "Informatica"
-            />
-          </b-col>
-        </b-row>
+          <carousel :per-page="5" :mouse-drag="true">
+            <slide>
+              <CourseCard
+                courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                courseName="Advanced datastructures"
+                coursePrice="100"
+                courseTeacher="Joey Deckers"
+                courseSchool="Tilburg University"
+                courseStudy = "Informatica"
+              />
+            </slide>
+          </carousel>
+      </section>
+
     </b-container>
   </div>
 </template>
@@ -47,6 +53,11 @@ export default {
     CourseCard,
     Carousel,
     Slide
+  },
+  computed:{
+    getUserInfo(){
+      return this.$store.getters.getUserInfo;
+    }
   }
 };
 </script>

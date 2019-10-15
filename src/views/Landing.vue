@@ -69,6 +69,7 @@
 <script>
   import NavbarLanding from './../components/NavbarLanding'
   import Video from './../components/Video'
+  import router from './../router'
 
   export default {
     components:{
@@ -76,7 +77,9 @@
       Video
     },
     mounted(){
-      console.log(this.$store.getters.getUserToken);
+      if(this.$store.getters.getUserToken){
+        router.push('/home');
+      }
     }
   }
 </script>
