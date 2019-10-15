@@ -5,7 +5,7 @@
       navbarBackgroundColor="#fff !important"
     />
     <b-container class="container-custom">
-      {{getUserInfo }}
+      {{this.userInfo }}
       <section class="my-courses">
         <h2>Jouw cursussen</h2>
         <p>Bekijk jouw cursussen</p>
@@ -23,6 +23,9 @@
           </carousel>
       </section>
       <section class="university-courses">
+        <div v-for="course in this.universityCourses" :key = "course.id">
+          hallo
+        </div>
         <h2>Bekijk cursussen van Tilburg University</h2>
           <carousel :per-page="5" :mouse-drag="true">
             <slide>
@@ -46,6 +49,8 @@
 import NavbarLanding from "./../components/NavbarLanding";
 import CourseCard from "./../components/CourseCard";
 import { Carousel, Slide } from "vue-carousel";
+import { mapActions } from "vuex";  
+import {mapGetters} from 'vuex'
 
 export default {
   components: {
@@ -55,9 +60,19 @@ export default {
     Slide
   },
   computed:{
-    getUserInfo(){
-      return this.$store.getters.getUserInfo;
+    ...mapGetters({
+        universityCourses: 'getUniversityCourses',
+        userInfo: 'getUserInfo'
+    }),
+  },
+  methods:{
+    ...mapActions(["getCoursesByUniversity"]),
+    getCoursesByUniversityForUser(){
+      this.getCoursesByUniversity("Tilburg University");
     }
+  },
+  created(){
+    this.getCoursesByUniversityForUser();
   }
 };
 </script>

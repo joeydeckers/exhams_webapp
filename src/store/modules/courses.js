@@ -7,29 +7,23 @@ const state = {
 };
 
 const getters = {
-    getUserToken:(state) =>{
-        return state.userToken;
-    },
-    getError:(state) =>{
-        return state.error;
+    // getUserToken:(state) =>{
+    //     return state.userToken;
+    // },
+    // getError:(state) =>{
+    //     return state.error;
+    // }
+    getUniversityCourses: (state) => {
+        return state.universityCourses;
     }
 };
 
 const actions = {
-    getUserCourses ({commit}, user){
+    getCoursesByUniversity ({commit}, university){
         axios
-            .post("http://127.0.0.1:8000/api/login",{
-                email: user.email,
-                password: user.password
-            })
+            .get(`http://127.0.0.1:8000/api/courses/getcoursesbyschool/${university}`)
             .then((response) => {
-                console.log(response.data.access_token)
-                commit('SET_USER_COURSES', response.data.access_token);
-                localStorage.setItem('accessToken', response.data.access_token);
-                console.log(localStorage);
-                if(localStorage.accessToken){
-                    router.push('/home');
-                }    
+                commit('SET_UNIVERSITY_COURSES', response.data)
             })
             .catch((error) => {
                 commit('SET_ERROR', true);
@@ -45,6 +39,9 @@ const mutations = {
     SET_USER_COURSES(state, token){
         state.userToken = token;
     },
+    SET_UNIVERSITY_COURSES(state, universityCourses){
+        state.universityCourses = universityCourses;
+    }
 };
 
 export default {
