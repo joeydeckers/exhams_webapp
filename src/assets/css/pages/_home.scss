@@ -12,4 +12,10 @@
             margin-bottom: 20px;
         }
     }
+    .course-link{
+        color: #000;
+        &:hover{
+            text-decoration: none;
+        }
+    }
 }

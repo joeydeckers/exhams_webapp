@@ -3,7 +3,7 @@
       <img :src="courseThumbnail" alt="" >
       <div class="course-card-info">
         <h3>{{courseName}}</h3>
-        <p>Docent: {{courseTeacher}}</p>
+        <!-- <p>Docent: {{courseTeacher}}</p> -->
         <p>{{courseSchool}}</p>
         <div class="course-subinfo">
           <p>{{courseStudy}}</p>

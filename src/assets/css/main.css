@@ -464,6 +464,14 @@
   margin-bottom: 20px;
 }
 
+#home .course-link {
+  color: #000;
+}
+
+#home .course-link:hover {
+  text-decoration: none;
+}
+
 body {
   font-family: 'Raleway', sans-serif !important;
 }

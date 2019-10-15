@@ -9,7 +9,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 const options = {
-  color: '#000',
+  color: '#2ecc71',
   failedColor: '#874b4b',
   thickness: '5px',
   transition: {

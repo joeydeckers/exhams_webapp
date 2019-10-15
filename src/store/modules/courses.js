@@ -3,18 +3,16 @@ import router from './../../router'
 
 const state = {
     userCourses: [],
-    universityCourses: []
+    universityCourses: [],
+    specificCourse: [],
 };
 
 const getters = {
-    // getUserToken:(state) =>{
-    //     return state.userToken;
-    // },
-    // getError:(state) =>{
-    //     return state.error;
-    // }
     getUniversityCourses: (state) => {
         return state.universityCourses;
+    },
+    getCourse: (state) => {
+        return state.specificCourse;
     }
 };
 
@@ -28,13 +26,19 @@ const actions = {
             .catch((error) => {
                 commit('SET_ERROR', true);
             })
-
     },
+    getSpecificCourse({commit}, course){
+        axios
+            .get(`http://127.0.0.1:8000/api${course}`)
+            .then((response) => {
+                commit('SET_SPECIFIC', response.data)
+            })
+    }
  };
 
 const mutations = {
-    SET_RECIPES(state, recipes){
-        state.recipes = recipes;
+    SET_SPECIFIC(state, specificCourse){
+        state.specificCourse = specificCourse;
     },
     SET_USER_COURSES(state, token){
         state.userToken = token;

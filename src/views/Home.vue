@@ -23,20 +23,20 @@
           </carousel>
       </section>
       <section class="university-courses">
-        <div v-for="course in this.universityCourses" :key = "course.id">
-          hallo
-        </div>
         <h2>Bekijk cursussen van Tilburg University</h2>
           <carousel :per-page="5" :mouse-drag="true">
-            <slide>
-              <CourseCard
-                courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                courseName="Advanced datastructures"
-                coursePrice="100"
-                courseTeacher="Joey Deckers"
-                courseSchool="Tilburg University"
-                courseStudy = "Informatica"
-              />
+            <slide v-for="course in this.universityCourses" :key = "course.id">
+              <router-link class="course-link" :to = "`/course/${course.id}`">
+                <CourseCard
+                  courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  :courseName= course.course_name
+                  coursePrice="100"
+                  courseTeacher="Joey Deckers"
+                  :courseSchool= course.course_school
+                  :courseStudy = course.course_study
+                />
+              </router-link>
+
             </slide>
           </carousel>
       </section>
