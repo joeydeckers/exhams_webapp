@@ -296,6 +296,25 @@
   margin-top: 50px;
 }
 
+.landing .cta-text {
+  margin-top: 10px;
+  color: #c3c3c3;
+  font-size: 15px;
+}
+
+.landing .course-link {
+  color: #000;
+}
+
+.landing .course-link:hover {
+  text-decoration: none;
+}
+
+.landing .features h2 {
+  text-align: center;
+  margin-top: 15px;
+}
+
 .login-form {
   position: relative;
   top: 90px;

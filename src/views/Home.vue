@@ -36,7 +36,6 @@
                   :courseStudy = course.course_study
                 />
               </router-link>
-
             </slide>
           </carousel>
       </section>

@@ -14,7 +14,7 @@
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav v-if="loggedIn">
-                <b-nav-item href="#">Mijn dashboard</b-nav-item>
+                <b-nav-item to="/home">Mijn dashboard</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
                 <b-nav-item @click = "logout" to="/">Logout</b-nav-item>
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
