@@ -1,0 +1,23 @@
+.request-course{
+    height: 100%;
+    width:100%;
+    padding: 20px;
+    margin-top: 70px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 18px 3px rgba(0, 0, 0, 0.14);
+    form{
+        p{
+            font-weight: bold;
+            &:first-of-type{
+                margin-bottom: 10px;
+                font-size: 20px;
+            }
+        }
+        .sucess{
+            color: #2ecc71;
+        }
+        .failed{
+            color: red;
+        }
+    }
+}

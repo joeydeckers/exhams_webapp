@@ -11,10 +11,12 @@
                 <b-nav-item href="#">Over Exhams</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
                 <b-nav-item to="/login">Login</b-nav-item>
+                <b-nav-item to="/cursus-aanvragen">Cursus aanvragen</b-nav-item>
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
             </b-navbar-nav>
             <b-navbar-nav v-if="loggedIn">
                 <b-nav-item to="/home">Mijn dashboard</b-nav-item>
+                <b-nav-item to="/cursus-aanvragen">Cursus aanvragen</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
                 <b-nav-item @click = "logout" to="/">Logout</b-nav-item>
                 <b-nav-item class="accent-color" href="#">Wordt een trainer</b-nav-item>
