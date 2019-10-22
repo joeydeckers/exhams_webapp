@@ -43,6 +43,32 @@ const actions = {
     userLogout({commit}){
         localStorage.clear();
         commit('SET_USER', '');
+    },
+    userRegister({commit}, user){
+        axios
+        .post("http://127.0.0.1:8000/api/register",{
+            email: user.email,
+            password: user.password,
+            password_confirmation: user.password_confirmation,
+            name: user.name,
+            school: user.school,
+            study: user.study,
+            rating: user.rating,
+            gender: user.gender,
+            birthdate: user.birthdate
+        })
+        .then((response) => {
+            commit('SET_USER', response.data.access_token);
+            commit('SET_USER_INFO', response.data.user);
+            localStorage.setItem('userInfo', response.data.user);
+            localStorage.setItem('accessToken', response.data.access_token);
+            if(localStorage.accessToken){
+                router.push('/home');
+            }    
+        })
+        .catch((error) => {
+            commit('SET_ERROR', true);
+        })
     }
  };
 

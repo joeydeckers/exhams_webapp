@@ -45,7 +45,7 @@
         <div class="videos">
           <b-row>
             <b-col lg="3" v-for="course in this.latestCourses" :key="course.id">
-              <router-link class="course-link" :to="`/course/${course.id}`">
+              <router-link class="course-link" :to="`/cursus/${course.id}`">
                 <CourseCard
                   courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                   :courseName="course.course_name"

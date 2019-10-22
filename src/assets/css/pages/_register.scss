@@ -1,0 +1,17 @@
+#register{
+    padding: 0;
+    .register-bg{
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        background-image: url('../images/intro_landing.jpg');
+        @media screen and (max-width: 850px){
+            display: none !important;
+        }
+    }
+    form{
+        p{
+            margin-bottom: 5px;
+        }
+    }
+}
