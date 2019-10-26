@@ -8,6 +8,7 @@ import Home from './views/Home'
 import AskForCourse from './views/AskForCourse'
 import AskForCourseUniversity from './views/AskForCourseUniversity'
 import Register from './views/Register'
+import CourseSearch from './views/CourseSearch'
 
 Vue.use(Router)
 
@@ -51,6 +52,11 @@ const router = new Router({
       component: Register
     },
     {
+      path:'/cursussen/:university/:study',
+      name: 'CourseSearch',
+      component: CourseSearch
+    },
+    {
       path: '/home',
       name: 'Home',
       component: Home,
@@ -61,7 +67,7 @@ const router = new Router({
   ]
 })
 
-const openRoutes = ['Landing', 'Contact', 'Login', 'Course', 'AskForCourse', 'AskForCourseUniversity', 'Register'];
+const openRoutes = ['Landing', 'Contact', 'Login', 'Course', 'AskForCourse', 'AskForCourseUniversity', 'Register', 'CourseSearch'];
 
 router.beforeEach((to, from, next) => {
   if(openRoutes.includes(to.name)){

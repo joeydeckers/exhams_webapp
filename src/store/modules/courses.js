@@ -5,7 +5,8 @@ const state = {
     userCourses: [],
     universityCourses: [],
     specificCourse: [],
-    latestCourses: []
+    latestCourses: [],
+    searchedCourses:[]
 };
 
 const getters = {
@@ -44,6 +45,13 @@ const actions = {
             .then((response) => {
                 commit('SET_LATEST_COURSES', response.data)
             })
+    },
+    getSearchedCourses({commit}, university, study){
+        axios
+            .get(`http://127.0.0.1:8000/api/courses/${university}/${study}`)
+            .then((response) => {
+                commit('SET_LATEST_COURSES', response.data)
+            })
     }
  };
 
@@ -59,6 +67,9 @@ const mutations = {
     },
     SET_UNIVERSITY_COURSES(state, universityCourses){
         state.universityCourses = universityCourses;
+    },
+    SET_SEARCHED_COURSES(state, searchedCourses){
+        state.searchedCourses = searchedCourses;
     }
 };
 

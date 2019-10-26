@@ -15,20 +15,21 @@
               <div class="search">
                 <div class="select">
                   <i class="fas fa-school"></i>
-                  <select name id>
-                    <option value>Kies universiteit</option>
-                    <option value>Kies universiteit</option>
+                  <select v-model="university" name id>
+                    <option value = "">Kies universiteit</option>
+                    <option value = "tilburg-university">Tilburg University</option>
                     <option value>Kies universiteit</option>
                     <option value>Kies universiteit</option>
                     <option value>Kies universiteit</option>
                   </select>
                 </div>
                 <div class="select">
-                  <select name id>
+                  <select v-model="study" name id>
                     <option value>Kies studie</option>
+                    <option value = "informatica">Informatica</option>
                   </select>
                 </div>
-                <button class="btn btn-custom">Zoeken</button>
+                <button @click="searchCourse" class="btn btn-custom">Zoeken</button>
               </div>
               <p class="cta-text">Zelf uploaden? Klik dan hier</p>
             </div>
@@ -83,10 +84,19 @@ export default {
     Video,
     CourseCard
   },
+  data(){
+    return{
+      university: '',
+      study: ''
+    }
+  },
   methods: {
     ...mapActions(["getLatestCourses"]),
     getLatestCoursesHome() {
       this.getLatestCourses();
+    },
+    searchCourse(){
+      router.push(`/cursussen/${this.university}/${this.study}`)
     }
   },
   computed: {
