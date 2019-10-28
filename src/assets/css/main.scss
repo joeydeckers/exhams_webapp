@@ -5,4 +5,13 @@
 
 body{
     font-family: 'Raleway', sans-serif !important;
+    background: blue;
+}
+
+.course-link{
+    color: #000;
+    &:hover{
+        text-decoration: none;
+        color: #000;
+    }
 }

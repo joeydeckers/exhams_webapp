@@ -1,7 +1,7 @@
 <template>
     <div id="contact">
         <div class="header">
-            <NavbarLanding navbarBackgroundColor = "transparent !important"/>
+            <Navbar navbarBackgroundColor = "transparent !important"/>
         </div>
         <b-container class="container-custom">
             <b-row> 
@@ -39,12 +39,12 @@
 </template>
 
 <script>
-import NavbarLanding from './../components/NavbarLanding'
+import Navbar from './../components/Navbar'
 import Button from './../components/Button'
 
 export default {
     components:{
-        NavbarLanding,
+        Navbar,
         Button
     },
     data(){

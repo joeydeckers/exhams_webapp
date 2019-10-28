@@ -1,6 +1,6 @@
 <template>
   <b-col lg = "3" class="mx-auto request-course">
-       <NavbarLanding class="fixed-top" navbarBackgroundColor="transparent !important" />
+       <Navbar class="fixed-top" navbarBackgroundColor="transparent !important" />
        <b-form>
            <p>Cursus aanvragen</p>
            <p class="sucess" v-if="sucess">Cursus aangevraagd</p>
@@ -14,11 +14,11 @@
 <script>
 import router from './../router'
 import axios from 'axios';
-import NavbarLanding from "./../components/NavbarLanding";
+import Navbar from "./../components/Navbar";
 
 export default {
     components:{
-        NavbarLanding
+        Navbar
     }, 
     data(){
         return{

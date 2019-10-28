@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <NavbarLanding
+    <Navbar
       style="-webkit-box-shadow:0px 1px 4px  #00000073;-moz-box-shadow:0px 1px 4px #00000073; box-shadow: 0px 1px 4px #00000073; background:#fff;"
       navbarBackgroundColor="#fff !important"
     />
@@ -45,7 +45,7 @@
 </template>
 
 <script>
-import NavbarLanding from "./../components/NavbarLanding";
+import Navbar from "./../components/Navbar";
 import CourseCard from "./../components/CourseCard";
 import { Carousel, Slide } from "vue-carousel";
 import { mapActions } from "vuex";  
@@ -53,7 +53,7 @@ import {mapGetters} from 'vuex'
 
 export default {
   components: {
-    NavbarLanding,
+    Navbar,
     CourseCard,
     Carousel,
     Slide

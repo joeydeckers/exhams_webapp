@@ -13,8 +13,8 @@ import CourseSearch from './views/CourseSearch'
 Vue.use(Router)
 
 const router = new Router({
-  // mode: 'history',
-  // base: process.env.BASE_URL,
+  mode: 'history',
+  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
@@ -54,7 +54,7 @@ const router = new Router({
     {
       path:'/cursussen/:university/:study',
       name: 'CourseSearch',
-      component: CourseSearch
+      component: CourseSearch,
     },
     {
       path: '/home',

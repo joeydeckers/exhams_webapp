@@ -18,6 +18,9 @@ const getters = {
     },
     getlatestCourses: (state) => {
         return state.latestCourses;
+    },
+    getSearchedCourses: (state) =>{
+        return state.searchedCourses;
     }
 };
 
@@ -46,11 +49,11 @@ const actions = {
                 commit('SET_LATEST_COURSES', response.data)
             })
     },
-    getSearchedCourses({commit}, university, study){
+    loadSearchedCourses({commit}, courseInfo){
         axios
-            .get(`http://127.0.0.1:8000/api/courses/${university}/${study}`)
+            .get(`http://127.0.0.1:8000/api/courses/${courseInfo.university}/${courseInfo.study}`)
             .then((response) => {
-                commit('SET_LATEST_COURSES', response.data)
+                commit('SET_SEARCHED_COURSES', response.data)
             })
     }
  };

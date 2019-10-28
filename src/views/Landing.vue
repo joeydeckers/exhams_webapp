@@ -1,6 +1,6 @@
 <template>
   <div class="landing">
-    <NavbarLanding class="fixed-top" navbarBackgroundColor="transparent !important" />
+    <Navbar class="fixed-top" navbarBackgroundColor="transparent !important" />
     <section class="intro">
       <b-container fluid>
         <b-row>
@@ -72,7 +72,7 @@
 
 
 <script>
-import NavbarLanding from "./../components/NavbarLanding";
+import Navbar from "./../components/Navbar";
 import Video from "./../components/Video";
 import router from "./../router";
 import { mapActions, mapGetters } from "vuex";
@@ -80,7 +80,7 @@ import CourseCard from "./../components/CourseCard";
 
 export default {
   components: {
-    NavbarLanding,
+    Navbar,
     Video,
     CourseCard
   },
