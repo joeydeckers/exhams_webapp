@@ -8,7 +8,7 @@
         <b-navbar-nav class="ml-auto">
             <!-- Using 'button-content' slot -->
             <b-navbar-nav v-if="!loggedIn">
-                <b-nav-item href="#">Over Exhams</b-nav-item>
+                <b-nav-item href="#">Over ons</b-nav-item>
                 <b-nav-item to="/contact">Contact</b-nav-item>
                 <b-nav-item to="/login">Login</b-nav-item>
                 <b-nav-item to="/cursus-aanvragen">Cursus aanvragen</b-nav-item>

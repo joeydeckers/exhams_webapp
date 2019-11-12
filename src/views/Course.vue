@@ -6,7 +6,7 @@
         />
         <b-container>
             <div class="course-container">
-                <video :src=specificCourse.course_video_url controls></video>
+                <video id="course_video" :src=specificCourse.course_video_url controls></video>
                 <h3><strong>{{specificCourse.course_name}}</strong></h3>
                 <button class="button-custom">Curses kopen</button>
                 <p><strong>Beschrijving</strong></p>
@@ -30,6 +30,7 @@
                     </div>
                 </div>
             </div>
+            <button @click="setSpeed">Set speed</button>
         </b-container>
     </div>
 </template>
@@ -46,7 +47,11 @@ export default {
   methods:{
        ...mapActions(["getSpecificCourse"]),
       getCourse(){
-          this.getSpecificCourse(this.$route.path);
+        this.getSpecificCourse(this.$route.path);
+      },
+      setSpeed(){
+        let video = document.getElementById("course_video");
+        video.playbackRate = 1.25;
       }
   },
   computed:{
@@ -56,6 +61,7 @@ export default {
   },
   created(){
       this.getCourse();
+
   }
 }
 

@@ -55,7 +55,7 @@ export default {
         }
     },
     methods:{
-        ...mapActions(["userRegister"]),
+        ...mapActions(["userRegister"]), 
         register(){
             this.userRegister({
                 email:this.email,
@@ -71,9 +71,9 @@ export default {
         }
     },
     mounted(){
-        if(this.$store.getters.getUserToken){
-            router.push('/home');
-        }
+        // if(this.$store.getters.getUserToken){
+        //     router.push('/home');
+        // }
     }
 }
 </script>

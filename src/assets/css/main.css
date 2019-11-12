@@ -518,6 +518,10 @@
   color: red;
 }
 
+#request-course-select-page img {
+  width: 100%;
+}
+
 #register {
   padding: 0;
 }
@@ -641,6 +645,7 @@
 
 body {
   font-family: 'Raleway', sans-serif !important;
+  background: blue;
 }
 
 .course-link {

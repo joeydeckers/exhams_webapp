@@ -1,9 +1,13 @@
 <template>
-  <div>
+  <div id="request-course-select-page">
+      <Navbar class="fixed-top" navbarBackgroundColor="transparent !important" />
       <b-container>
           <b-row>
-              <b-col v-for="university in universities" :key = "university.id" lg="4">
-                  {{university.name}}
+              <b-col v-for="university in universities" :key = "university.id" lg="3">
+                  <router-link :to="`/cursus-aanvragen/${university.url}`">
+                    <h3>{{university.name}}</h3>
+                    <img v-bind:src="university.img">
+                  </router-link>
               </b-col>
 
           </b-row>
@@ -12,63 +16,81 @@
 </template>
 
 <script>
+import router from './../router'
+import Navbar from "./../components/Navbar";
 
 export default {
+    components:{
+        Navbar
+    },
     data(){
         return{
             universities:[
                 {
                     name: 'Leiden universiteit',
-                    url: 'universiteit-leiden'
+                    url: 'universiteit-leiden',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Universiteit van Amsterdam',
-                    url: 'universiteit-van-amsterdam'
+                    url: 'universiteit-van-amsterdam',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Utrecht universiteit',
-                    url: 'universiteit-utrect'
+                    url: 'universiteit-utrect',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Technische universiteit Delft',
-                    url: 'technische-universiteit-delft'
+                    url: 'technische-universiteit-delft',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Technische universiteit Eindhoven',
-                    url: 'technische-universiteit-eindhoven'
+                    url: 'technische-universiteit-eindhoven',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Rijksuniversiteit Groningen',
-                    url: 'rijksuniversiteit-groningen'
+                    url: 'rijksuniversiteit-groningen',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Erasmus Universiteit',
-                    url: 'erasmus-universiteit'
+                    url: 'erasmus-universiteit',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Tilburg University',
-                    url: 'tilburg-university'
+                    url: 'tilburg-university',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Maastricht University',
-                    url: 'maastricht-university'
+                    url: 'maastricht-university',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Radboud Universiteit',
-                    url: 'radboud-universiteit'
+                    url: 'radboud-universiteit',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Vrije universiteit',
-                    url: 'vrije-universiteit'
+                    url: 'vrije-universiteit',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Wageningen universiteit',
-                    url: 'wageningen-universiteit'
+                    url: 'wageningen-universiteit',
+                    img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
                     name: 'Universiteit Twente',
-                    url: 'universiteit-twente'
-                }
+                    url: 'universiteit-twente',
+                    img: require('../assets/images/leiden-universiteit.jpg')
+                },
             ]
         }
     }

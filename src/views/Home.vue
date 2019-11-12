@@ -5,20 +5,21 @@
       navbarBackgroundColor="#fff !important"
     />
     <b-container class="container-custom">
-      {{this.userInfo }}
       <section class="my-courses">
         <h2>Jouw cursussen</h2>
         <p>Bekijk jouw cursussen</p>
           <carousel :per-page="5" :mouse-drag="true">
-            <slide>
-              <CourseCard
-                courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                courseName="Advanced datastructures"
-                coursePrice="100"
-                courseTeacher="Joey Deckers"
-                courseSchool="Tilburg University"
-                courseStudy = "Informatica"
-              />
+            <slide v-for="course in this.userCourses" :key = "course.id">
+              <router-link class="course-link" :to = "`/cursus/${course.id}`">
+                <CourseCard
+                  courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                  :courseName= course.course_name
+                  coursePrice="100"
+                  courseTeacher="Joey Deckers"
+                  :courseSchool= course.course_school
+                  :courseStudy = course.course_study
+                />
+              </router-link>
             </slide>
           </carousel>
       </section>
@@ -26,7 +27,7 @@
         <h2>Bekijk cursussen van Tilburg University</h2>
           <carousel :per-page="5" :mouse-drag="true">
             <slide v-for="course in this.universityCourses" :key = "course.id">
-              <router-link class="course-link" :to = "`/course/${course.id}`">
+              <router-link class="course-link" :to = "`/cursus/${course.id}`">
                 <CourseCard
                   courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                   :courseName= course.course_name
@@ -61,17 +62,23 @@ export default {
   computed:{
     ...mapGetters({
         universityCourses: 'getUniversityCourses',
-        userInfo: 'getUserInfo'
+        userInfo: 'getUserInfo',
+        userCourses: 'getAllUserCourses'
     }),
   },
   methods:{
-    ...mapActions(["getCoursesByUniversity"]),
+    ...mapActions(["getCoursesByUniversity", "getUserCourses"]),
     getCoursesByUniversityForUser(){
-      this.getCoursesByUniversity("Tilburg University");
+      this.getCoursesByUniversity("tilburg-university");
+    },
+    getAllUserCourses(){
+      let id = JSON.parse(localStorage.getItem('userInfo'));
+      this.getUserCourses(id);
     }
   },
   created(){
     this.getCoursesByUniversityForUser();
+    this.getAllUserCourses();
   }
 };
 </script>

@@ -27,9 +27,10 @@ const actions = {
                 password: user.password
             })
             .then((response) => {
+                console.log(response);
                 commit('SET_USER', response.data.access_token);
                 commit('SET_USER_INFO', response.data.user);
-                localStorage.setItem('userInfo', response.data.user);
+                localStorage.setItem('userInfo', JSON.stringify(response.data.user));
                 localStorage.setItem('accessToken', response.data.access_token);
                 if(localStorage.accessToken){
                     router.push('/home');
@@ -55,7 +56,8 @@ const actions = {
             study: user.study,
             rating: user.rating,
             gender: user.gender,
-            birthdate: user.birthdate
+            birthdate: user.birthdate,
+            course_ids: '[]'
         })
         .then((response) => {
             commit('SET_USER', response.data.access_token);
@@ -63,7 +65,7 @@ const actions = {
             localStorage.setItem('userInfo', response.data.user);
             localStorage.setItem('accessToken', response.data.access_token);
             if(localStorage.accessToken){
-                router.push('/home');
+               // router.push('/home');
             }    
         })
         .catch((error) => {

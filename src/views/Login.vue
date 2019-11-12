@@ -7,8 +7,8 @@
                     <p class="error" v-if="getError">Je gegevens zijn niet correct</p>
                     <input v-model="email" class="form-control" placeholder="Email" type="text">
                     <input v-model="password" class="form-control" placeholder="Wachtwoord" type="password">
-                    <button @click="login" class="btn ">Inloggen</button>
                 </form>
+                    <button @click="login" class="btn ">Inloggen</button>
 
             </div>
         </b-container>

@@ -21,6 +21,9 @@ const getters = {
     },
     getSearchedCourses: (state) =>{
         return state.searchedCourses;
+    },
+    getAllUserCourses: (state)=> {
+        return state.userCourses;
     }
 };
 
@@ -55,6 +58,13 @@ const actions = {
             .then((response) => {
                 commit('SET_SEARCHED_COURSES', response.data)
             })
+    },
+    getUserCourses({commit}, id){
+        axios
+            .get(`http://127.0.0.1:8000/api/user/${id.id}/courses`)
+            .then((response) => {
+                commit('SET_USER_COURSES', response.data)
+            })
     }
  };
 
@@ -73,6 +83,9 @@ const mutations = {
     },
     SET_SEARCHED_COURSES(state, searchedCourses){
         state.searchedCourses = searchedCourses;
+    },
+    SET_USER_COURSES(state, userCourses){
+        state.userCourses = userCourses
     }
 };
 
