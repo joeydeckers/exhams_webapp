@@ -6,7 +6,8 @@ const state = {
     universityCourses: [],
     specificCourse: [],
     latestCourses: [],
-    searchedCourses:[]
+    searchedCourses:[],
+    requestedCourses: []
 };
 
 const getters = {
@@ -24,6 +25,9 @@ const getters = {
     },
     getAllUserCourses: (state)=> {
         return state.userCourses;
+    },
+    getAllRequestedCourses: (state) => {
+        return state.requestedCourses;
     }
 };
 
@@ -65,6 +69,15 @@ const actions = {
             .then((response) => {
                 commit('SET_USER_COURSES', response.data)
             })
+    },
+    getAllRequestedCourses({commit}, university){
+        axios
+            .get(`http://127.0.0.1:8000/api/getrequestedcourses/universiteit-leiden`)
+            .then((response) => {
+                console.log(response.data);
+                commit('SET_REQUESTED_COURSES', response.data)
+            })
+
     }
  };
 
@@ -86,6 +99,9 @@ const mutations = {
     },
     SET_USER_COURSES(state, userCourses){
         state.userCourses = userCourses
+    },
+    SET_REQUESTED_COURSES(state, requestedCourses){
+        state.requestedCourses = requestedCourses;
     }
 };
 

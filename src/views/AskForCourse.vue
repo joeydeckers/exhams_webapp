@@ -2,8 +2,9 @@
   <div id="request-course-select-page">
       <Navbar class="fixed-top" navbarBackgroundColor="transparent !important" />
       <b-container>
+          <h2>Selecteer een universiteit</h2>
           <b-row>
-              <b-col v-for="university in universities" :key = "university.id" lg="3">
+              <b-col class="university" v-for="university in universities" :key = "university.id" lg="3" md="6">
                   <router-link :to="`/cursus-aanvragen/${university.url}`">
                     <h3>{{university.name}}</h3>
                     <img v-bind:src="university.img">
@@ -27,7 +28,7 @@ export default {
         return{
             universities:[
                 {
-                    name: 'Leiden universiteit',
+                    name: 'Leiden Universiteit',
                     url: 'universiteit-leiden',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
@@ -37,17 +38,17 @@ export default {
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
-                    name: 'Utrecht universiteit',
+                    name: 'Utrecht Universiteit',
                     url: 'universiteit-utrect',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
-                    name: 'Technische universiteit Delft',
+                    name: 'Technische Universiteit Delft',
                     url: 'technische-universiteit-delft',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
-                    name: 'Technische universiteit Eindhoven',
+                    name: 'Technische Universiteit Eindhoven',
                     url: 'technische-universiteit-eindhoven',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
@@ -77,12 +78,12 @@ export default {
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
-                    name: 'Vrije universiteit',
+                    name: 'Vrije Universiteit',
                     url: 'vrije-universiteit',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },
                 {
-                    name: 'Wageningen universiteit',
+                    name: 'Wageningen Universiteit',
                     url: 'wageningen-universiteit',
                     img: require('../assets/images/leiden-universiteit.jpg')
                 },

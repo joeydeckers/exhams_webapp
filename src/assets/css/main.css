@@ -518,8 +518,47 @@
   color: red;
 }
 
-#request-course-select-page img {
+#request-course-select-page {
+  position: relative;
+  top: 65px;
+}
+
+#request-course-select-page h2 {
+  margin-bottom: 20px;
+}
+
+#request-course-select-page .university {
+  margin-bottom: 28px;
+}
+
+#request-course-select-page .university a {
+  position: relative;
+  display: block;
+}
+
+#request-course-select-page .university a:after {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
   width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#request-course-select-page .university a img {
+  width: 100%;
+}
+
+#request-course-select-page .university a h3 {
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  z-index: 2;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #register {

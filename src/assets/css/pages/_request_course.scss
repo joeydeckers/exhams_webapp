@@ -23,7 +23,41 @@
 }
 
 #request-course-select-page{
-    img{
-        width: 100%;
+    position: relative;
+    top: 65px;
+    h2{
+        margin-bottom: 20px;
+    }
+    .university{
+        margin-bottom: 28px;
+        a{
+            position: relative;
+            display: block;
+            &:after{
+                content:'';
+                position:absolute;
+                left:0px;
+                top:0px;
+                width:100%;
+                height:100%;
+                background: rgba(0, 0, 0, 0.3);
+            }
+            img{
+                width: 100%;
+                //position: relative;
+
+            }
+            h3{
+                color: #fff;
+                width: 100%;
+                position: absolute;
+                text-align: center;
+                z-index: 2;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+            }
+            
+        }
     }
 }

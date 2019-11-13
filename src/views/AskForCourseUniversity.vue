@@ -4,10 +4,10 @@
        <b-form>
            <p>Cursus aanvragen</p>
            <p class="sucess" v-if="sucess">Cursus aangevraagd</p>
-           <p class="failed" v-if="failed">Er is iets fout gegaan!</p>
+           <!-- <p class="failed" v-if="failed">Er is iets fout gegaan!</p> -->
            <b-input v-model="courseName" placeholder="Studie"/>
-           <button  style="margin-top:15px;" @click="askForCourse" class="button-custom">Cursus aanvragen</button>
        </b-form>  
+       <button  style="margin-top:15px;" @click="askForCourse" class="button-custom">Cursus aanvragen</button>
   </b-col>
 </template>
 
@@ -35,7 +35,6 @@ export default {
                 university: this.$route.params.university
             })
             .then((reponse) =>{
-                console.log(response.data.requested_study);
                 this.sucess = true
             })
             .catch((error)=>{
