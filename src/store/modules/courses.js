@@ -72,7 +72,7 @@ const actions = {
     },
     getAllRequestedCourses({commit}, university){
         axios
-            .get(`http://127.0.0.1:8000/api/getrequestedcourses/universiteit-leiden`)
+            .get(`http://127.0.0.1:8000/api/getrequestedcourses/${university}`)
             .then((response) => {
                 console.log(response.data);
                 commit('SET_REQUESTED_COURSES', response.data)
