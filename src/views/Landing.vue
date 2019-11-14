@@ -16,8 +16,8 @@
                 <div class="select">
                   <i class="fas fa-school"></i>
                   <select v-model="university" name id>
-                    <option value = "">Kies universiteit</option>
-                    <option value = "tilburg-university">Tilburg University</option>
+                    <option value>Kies universiteit</option>
+                    <option value="tilburg-university">Tilburg University</option>
                     <option value>Kies universiteit</option>
                     <option value>Kies universiteit</option>
                     <option value>Kies universiteit</option>
@@ -26,7 +26,7 @@
                 <div class="select">
                   <select v-model="study" name id>
                     <option value>Kies studie</option>
-                    <option value = "informatica">Informatica</option>
+                    <option value="informatica">Informatica</option>
                   </select>
                 </div>
                 <button @click="searchCourse" class="btn btn-custom">Zoeken</button>
@@ -62,9 +62,46 @@
       </b-container>
     </section>
     <section class="features">
-      <b-container>
+      <b-container class="container-custom">
         <h2>Wat kun je verwachten</h2>
-        <b-row></b-row>
+        <b-row>
+          <b-col lg="3">
+            <h3>
+              <strong>Waar en wanneer het jou uitkomt</strong>
+            </h3>
+            <p>Tentamentrainingen worden geüpload, kun je terugspoelen en kunnen niet worden verwijderd bij te weinig aanmeldingen.Zo kom je niet vlak voor je tentamen voor verassingen te staan.</p>
+          </b-col>
+          <b-col lg="3">
+            <h3>
+              <strong>Toptrainers</strong>
+            </h3>
+            <p>
+              Trainers hebben een 8 of hoger behaald. Door een transparant reviewsysteem,
+              een gratis preview en de mogelijkheid om vragen te stellen aan de trainer ben
+              je verzekerd van een goede aanwinst tijdens je tentamens.
+            </p>
+          </b-col>
+          <b-col lg="3">
+            <h3>
+              <strong>Een upload voor twee tentamenkansen</strong>
+            </h3>
+            <p>
+              Zoek het betreffende vak en bekijk hoeveel op geïnteresseerd hebben
+              geklikt. Upload vanuit huis en verdien 8 euro p/u bij de eerste aanmelding met een
+              maximum van X euro p/u!
+            </p>
+          </b-col>
+          <b-col lg="3">
+            <h3>
+              <strong>Samenvattingen</strong>
+            </h3>
+            <p>
+              Geen zin in een tentamentraining maar wel in studiehulp? Koop
+              een online samenvatting van de trainer. 80% van de opbrengsten gaan
+              naar de trainer.
+            </p>
+          </b-col>
+        </b-row>
       </b-container>
     </section>
   </div>
@@ -84,19 +121,19 @@ export default {
     Video,
     CourseCard
   },
-  data(){
-    return{
-      university: '',
-      study: ''
-    }
+  data() {
+    return {
+      university: "",
+      study: ""
+    };
   },
   methods: {
     ...mapActions(["getLatestCourses"]),
     getLatestCoursesHome() {
       this.getLatestCourses();
     },
-    searchCourse(){
-      router.push(`/cursussen/${this.university}/${this.study}`)
+    searchCourse() {
+      router.push(`/cursussen/${this.university}/${this.study}`);
     }
   },
   computed: {

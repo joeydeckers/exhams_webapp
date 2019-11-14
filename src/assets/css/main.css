@@ -312,7 +312,16 @@
 
 .landing .features h2 {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.landing .features .row {
+  padding-bottom: 20px;
+}
+
+.landing .features .row h3 {
+  font-size: 19px;
 }
 
 .login-form {
