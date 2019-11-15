@@ -7,8 +7,11 @@
           <b-col lg="6" md="12" sm="12" style="padding:0">
             <div class="intro-text">
               <h2>
-                Het
-                <strong>online</strong> tentamentraining platform waardoor
+                
+                <strong>Online</strong> tentamentrainingen en samenvattingen 
+waardoor 
+
+
                 <strong>jij</strong> je tentamen haalt
               </h2>
               <p>Zoek hier je tentamentraining die past bij jouw opleiding en universiteit.</p>
