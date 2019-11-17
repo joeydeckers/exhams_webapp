@@ -1,5 +1,8 @@
 .container-custom{
     max-width: 1600px !important;
+    @media screen and (max-width: 1440px){
+        max-width: 1290px !important;
+    }
     @media screen and (max-width:992px){
         max-width: 960px;
     }

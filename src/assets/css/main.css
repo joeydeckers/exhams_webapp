@@ -20,6 +20,12 @@
   max-width: 1600px !important;
 }
 
+@media screen and (max-width: 1440px) {
+  .container-custom {
+    max-width: 1290px !important;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .container-custom {
     max-width: 960px;
@@ -128,7 +134,7 @@
 
 @media screen and (max-width: 1440px) {
   .landing .intro .intro-text {
-    max-width: 650px;
+    max-width: 560px;
   }
 }
 
@@ -160,7 +166,8 @@
 
 @media screen and (max-width: 1440px) {
   .landing .intro .intro-text h2 {
-    font-size: 45px;
+    font-size: 35px;
+    line-height: 46px;
   }
 }
 
@@ -223,6 +230,12 @@
   display: inline-block;
   margin-right: 50px;
   margin-top: 7px;
+}
+
+@media screen and (max-width: 1440px) {
+  .landing .intro .search .select {
+    margin-right: 15px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
