@@ -66,7 +66,6 @@
 #course-card {
   border-radius: 5px;
   overflow: auto;
-  margin-right: 15px;
 }
 
 #course-card img {
@@ -93,6 +92,19 @@
 
 #course-card .course-subinfo .course-price {
   float: right;
+}
+
+.landing .icon {
+  margin-bottom: 10px;
+}
+
+.landing .footer-container {
+  background: #fbfbfb;
+  padding: 20px;
+}
+
+.landing .footer-container footer svg {
+  margin-right: 10px;
 }
 
 .landing .intro {

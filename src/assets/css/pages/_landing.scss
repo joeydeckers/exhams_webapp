@@ -1,4 +1,16 @@
 .landing{
+    .icon{
+        margin-bottom: 10px;
+    }
+    .footer-container{
+        background: #fbfbfb;
+        padding: 20px;
+        footer{
+            svg{
+                margin-right: 10px;
+            }
+        }
+    }
     .intro{
         height: 85vh;
         background: #fff;

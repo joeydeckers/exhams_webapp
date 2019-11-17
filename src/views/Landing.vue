@@ -66,12 +66,14 @@
         <h2>Wat kun je verwachten</h2>
         <b-row>
           <b-col lg="3">
+            <clock-icon size="2x" class="icon"></clock-icon>
             <h3>
               <strong>Waar en wanneer het jou uitkomt</strong>
             </h3>
             <p>Tentamentrainingen worden geüpload, kun je terugspoelen en kunnen niet worden verwijderd bij te weinig aanmeldingen.Zo kom je niet vlak voor je tentamen voor verassingen te staan.</p>
           </b-col>
           <b-col lg="3">
+            <user-icon size="2x" class="icon"></user-icon>
             <h3>
               <strong>Toptrainers</strong>
             </h3>
@@ -82,6 +84,7 @@
             </p>
           </b-col>
           <b-col lg="3">
+            <award-icon size="2x" class="icon"></award-icon>
             <h3>
               <strong>Een upload voor twee tentamenkansen</strong>
             </h3>
@@ -92,6 +95,7 @@
             </p>
           </b-col>
           <b-col lg="3">
+            <book-icon size="2x" class="icon"></book-icon>
             <h3>
               <strong>Samenvattingen</strong>
             </h3>
@@ -104,6 +108,11 @@
         </b-row>
       </b-container>
     </section>
+    <section class="footer-container">
+      <b-container class="container-custom">
+        <Footer/>
+      </b-container>
+    </section>
   </div>
 </template>
 
@@ -114,12 +123,20 @@ import Video from "./../components/Video";
 import router from "./../router";
 import { mapActions, mapGetters } from "vuex";
 import CourseCard from "./../components/CourseCard";
+import Footer from "./../components/Footer";
+
+import { UserIcon, ClockIcon, BookIcon, AwardIcon, } from 'vue-feather-icons'
 
 export default {
   components: {
     Navbar,
     Video,
-    CourseCard
+    CourseCard,
+    UserIcon,
+    ClockIcon,
+    BookIcon,
+    AwardIcon,
+    Footer   
   },
   data() {
     return {
