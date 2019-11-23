@@ -12,6 +12,7 @@
             <slide v-for="course in this.userCourses" :key = "course.id">
               <router-link class="course-link" :to = "`/cursus/${course.id}`">
                 <CourseCard
+                  style="margin-right: 20px;"
                   courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                   :courseName= course.course_name
                   coursePrice="100"
@@ -29,6 +30,7 @@
             <slide v-for="course in this.universityCourses" :key = "course.id">
               <router-link class="course-link" :to = "`/cursus/${course.id}`">
                 <CourseCard
+                  style="margin-right: 20px;"
                   courseThumbnail="https://images.pexels.com/photos/1438072/pexels-photo-1438072.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
                   :courseName= course.course_name
                   coursePrice="100"

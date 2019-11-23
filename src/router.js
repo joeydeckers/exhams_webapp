@@ -12,6 +12,7 @@ import CourseSearch from './views/CourseSearch'
 import About from './views/About'
 import RequestedCourses from './views/RequestedCourses'
 import RequestedCoursesPerUniversity from './views/RequestedCoursesPerUniversity'
+import CreateCourse from './views/CreateCourse'
 
 Vue.use(Router)
 
@@ -73,6 +74,11 @@ const router = new Router({
       path:'/aangevraagde-cursussen/:university',
       name: 'RequestedCoursesPerUniversity',
       component: RequestedCoursesPerUniversity,
+    },
+    {
+      path:'/cursus-aanmaken',
+      name: 'CreateCourse',
+      component: CreateCourse,
     },
     {
       path: '/home', 

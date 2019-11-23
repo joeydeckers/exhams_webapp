@@ -7,11 +7,7 @@
           <b-col lg="6" md="12" sm="12" style="padding:0">
             <div class="intro-text">
               <h2>
-                
-                <strong>Online</strong> tentamentrainingen en samenvattingen 
-waardoor 
-
-
+                <strong>Online</strong> tentamentrainingen en samenvattingen waardoor 
                 <strong>jij</strong> je tentamen haalt
               </h2>
               <p>Zoek hier je tentamentraining die past bij jouw opleiding en universiteit.</p>
@@ -20,10 +16,7 @@ waardoor
                   <i class="fas fa-school"></i>
                   <select v-model="university" name id>
                     <option value>Kies universiteit</option>
-                    <option value="tilburg-university">Tilburg University</option>
-                    <option value>Kies universiteit</option>
-                    <option value>Kies universiteit</option>
-                    <option value>Kies universiteit</option>
+                    <option v-for="university in universities" :key="university.id"  :value="university.url">{{university.name}}</option>
                   </select>
                 </div>
                 <div class="select">
@@ -144,7 +137,61 @@ export default {
   data() {
     return {
       university: "",
-      study: ""
+      study: "",
+      universities:[
+                {
+                    name: 'Leiden Universiteit',
+                    url: 'universiteit-leiden',
+                },
+                {
+                    name: 'Universiteit van Amsterdam',
+                    url: 'universiteit-van-amsterdam',
+                },
+                {
+                    name: 'Utrecht Universiteit',
+                    url: 'universiteit-utrect',
+                },
+                {
+                    name: 'Technische Universiteit Delft',
+                    url: 'technische-universiteit-delft',
+                },
+                {
+                    name: 'Technische Universiteit Eindhoven',
+                    url: 'technische-universiteit-eindhoven',
+                },
+                {
+                    name: 'Rijksuniversiteit Groningen',
+                    url: 'rijksuniversiteit-groningen',
+                },
+                {
+                    name: 'Erasmus Universiteit',
+                    url: 'erasmus-universiteit',
+                },
+                {
+                    name: 'Tilburg University',
+                    url: 'tilburg-university',
+                },
+                {
+                    name: 'Maastricht University',
+                    url: 'maastricht-university',
+                },
+                {
+                    name: 'Radboud Universiteit',
+                    url: 'radboud-universiteit',
+                },
+                {
+                    name: 'Vrije Universiteit',
+                    url: 'vrije-universiteit',
+                },
+                {
+                    name: 'Wageningen Universiteit',
+                    url: 'wageningen-universiteit',
+                },
+                {
+                    name: 'Universiteit Twente',
+                    url: 'universiteit-twente',
+                },
+            ]
     };
   },
   methods: {

@@ -65,7 +65,7 @@ const actions = {
             localStorage.setItem('userInfo', response.data.user);
             localStorage.setItem('accessToken', response.data.access_token);
             if(localStorage.accessToken){
-               // router.push('/home');
+               router.push('/home');
             }    
         })
         .catch((error) => {

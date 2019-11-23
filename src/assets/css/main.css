@@ -634,8 +634,35 @@
   }
 }
 
+#register form {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
 #register form p {
+  margin: 5px 0 5px 0;
+}
+
+#register form .input-conainer {
   margin-bottom: 5px;
+  overflow: auto;
+}
+
+#register form input {
+  display: inline-block;
+  width: 80%;
+  border: transparent !important;
+}
+
+#register form input:focus {
+  outline: none;
+}
+
+#register form .icon {
+  display: inline-block;
+  color: #e8e8e8;
+  margin-bottom: 5px;
+  margin-right: 8px;
 }
 
 #search-page {
